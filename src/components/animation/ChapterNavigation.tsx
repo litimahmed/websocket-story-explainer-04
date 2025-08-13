@@ -42,7 +42,7 @@ export const ChapterNavigation: React.FC<ChapterNavigationProps> = ({
       {/* Header */}
       <div className="mb-6">
         <h2 className="text-xl font-bold text-sidebar-foreground mb-2">
-          WebSocket Story
+          WebSocket Story adzaygduza
         </h2>
         <p className="text-sm text-sidebar-foreground/70">
           Professional Animation Series
