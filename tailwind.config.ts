@@ -18,9 +18,6 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
-			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -64,14 +61,6 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				postal: {
-					primary: 'hsl(var(--postal-primary))',
-					secondary: 'hsl(var(--postal-secondary))',
-					accent: 'hsl(var(--postal-accent))',
-					success: 'hsl(var(--postal-success))',
-					warn: 'hsl(var(--postal-warn))',
-					bg: 'hsl(var(--postal-bg))'
 				}
 			},
 			borderRadius: {
