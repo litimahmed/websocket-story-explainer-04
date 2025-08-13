@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Maximize2, Minimize2 } from 'lucide-react';
 import { ChapterNavigation } from './animation/ChapterNavigation';
 import { TimelineControls } from './animation/TimelineControls';
 import { AnimationScene } from './animation/AnimationScene';
@@ -9,6 +10,7 @@ export const WebSocketAnimation = () => {
   const [currentChapter, setCurrentChapter] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleChapterChange = (chapterIndex: number) => {
     setCurrentChapter(chapterIndex);
@@ -27,8 +29,43 @@ export const WebSocketAnimation = () => {
     setProgress(newProgress);
   };
 
+  if (isFullscreen) {
+    return (
+      <div className="fixed inset-0 z-50 bg-postal-bg">
+        {/* Fullscreen Exit Button */}
+        <button
+          onClick={() => setIsFullscreen(false)}
+          className="absolute top-4 right-4 z-10 p-3 bg-card/80 backdrop-blur-sm rounded-lg border hover:bg-card transition-colors"
+        >
+          <Minimize2 className="w-5 h-5" />
+        </button>
+        
+        {/* Animation Scene Only */}
+        <div className="w-full h-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentChapter}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <AnimationScene
+                chapter={chapters[currentChapter]}
+                isPlaying={isPlaying}
+                progress={progress}
+                onProgressUpdate={handleProgressChange}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-inter">
       {/* Main Animation Area */}
       <div className="flex">
         {/* Chapter Navigation Sidebar */}
@@ -43,7 +80,15 @@ export const WebSocketAnimation = () => {
         {/* Animation Canvas */}
         <div className="flex-1 flex flex-col">
           {/* Animation Scene */}
-          <div className="flex-1 relative bg-gradient-to-br from-background to-muted">
+          <div className="flex-1 relative bg-postal-bg">
+            {/* Fullscreen Button */}
+            <button
+              onClick={() => setIsFullscreen(true)}
+              className="absolute top-4 right-4 z-10 p-3 bg-card/80 backdrop-blur-sm rounded-lg border hover:bg-card transition-colors"
+            >
+              <Maximize2 className="w-5 h-5" />
+            </button>
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentChapter}

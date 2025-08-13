@@ -38,13 +38,13 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* Animation-specific colors */
-    --postal-primary: 220 100% 55%;
-    --postal-accent: 35 100% 65%;
-    --postal-warn: 25 95% 53%;
-    --postal-success: 142 71% 45%;
-    --postal-bg-start: 220 60% 98%;
-    --postal-bg-end: 220 100% 95%;
+    /* Professional animation colors */
+    --postal-primary: 222 47% 11%;
+    --postal-secondary: 215 25% 27%;
+    --postal-accent: 214 32% 91%;
+    --postal-success: 142 31% 45%;
+    --postal-warn: 25 75% 53%;
+    --postal-bg: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,12 +101,12 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Dark mode animation colors */
-    --postal-primary: 220 100% 70%;
-    --postal-accent: 35 100% 70%;
-    --postal-warn: 25 95% 65%;
-    --postal-success: 142 71% 55%;
-    --postal-bg-start: 220 60% 8%;
-    --postal-bg-end: 220 100% 12%;
+    --postal-primary: 210 40% 98%;
+    --postal-secondary: 215 20% 65%;
+    --postal-accent: 217 33% 18%;
+    --postal-success: 142 41% 55%;
+    --postal-warn: 25 85% 65%;
+    --postal-bg: 222 84% 5%;
   }
 }
 
@@ -117,5 +117,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
   }
 }
