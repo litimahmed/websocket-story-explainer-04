@@ -61,6 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				postal: {
+					primary: 'hsl(var(--postal-primary))',
+					accent: 'hsl(var(--postal-accent))',
+					warn: 'hsl(var(--postal-warn))',
+					success: 'hsl(var(--postal-success))',
+					'bg-start': 'hsl(var(--postal-bg-start))',
+					'bg-end': 'hsl(var(--postal-bg-end))'
 				}
 			},
 			borderRadius: {
