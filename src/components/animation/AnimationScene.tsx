@@ -84,24 +84,7 @@ export const AnimationScene: React.FC<AnimationSceneProps> = ({
 
   return (
     <div className="w-full h-full relative overflow-hidden">
-      {/* Chapter Title Overlay */}
-      <motion.div
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ 
-          opacity: internalProgress > 2 ? 0 : 1,
-          y: internalProgress > 2 ? -20 : 0
-        }}
-        className="absolute top-8 left-8 z-10"
-      >
-        <div className="bg-card/90 backdrop-blur-sm p-4 rounded-lg border shadow-lg">
-          <h1 className="text-xl font-bold text-foreground mb-1">
-            Chapter {chapter.id}: {chapter.title}
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            {chapter.description}
-          </p>
-        </div>
-      </motion.div>
+      {/* Chapter Title Overlay - Hidden */}
 
       {/* Scene Content */}
       <div className="w-full h-full">
